@@ -314,4 +314,6 @@ public interface IStudyService {
 	 * @return
 	 */
 	public List<ConsentHistory> getConsentHistoryList(Consent consent);
+
+	public void setPreferredMailingAdressToFalse(Person person);
 }

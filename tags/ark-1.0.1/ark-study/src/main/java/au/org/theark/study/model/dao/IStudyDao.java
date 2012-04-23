@@ -342,5 +342,7 @@ public interface IStudyDao {
 	
 	public void update(LinkSubjectStudy linkSubjectStudy);
 
-	public LinkSubjectStudy getLinkSubjectStudy(Long id) throws EntityNotFoundException;	
+	public LinkSubjectStudy getLinkSubjectStudy(Long id) throws EntityNotFoundException;
+
+	public void setPreferredMailingAdressToFalse(Person person);	
 }
