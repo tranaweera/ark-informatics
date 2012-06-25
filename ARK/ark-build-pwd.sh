@@ -2,7 +2,7 @@
 
 # Define global variables
 #export DEV_USER=$USER   #assumes the same as current user
-export WORKSPACE_DIR=`pwd` #relative to current user HOME dir
+export WORKSPACE_DIR=`pwd`/trunk #relative to current user HOME dir
 
 # Maven build/install/package the source 
 cd $WORKSPACE_DIR/ark-common
@@ -35,11 +35,11 @@ if [ "$?" != "0" ]; then
 exit 1
 fi
 
-cd $WORKSPACE_DIR/ark-geno
-mvn clean install
-if [ "$?" != "0" ]; then
-exit 1
-fi
+#cd $WORKSPACE_DIR/ark-geno
+#mvn clean install
+#if [ "$?" != "0" ]; then
+#exit 1
+#fi
 
 cd $WORKSPACE_DIR/ark-report
 mvn clean install
@@ -48,6 +48,12 @@ exit 1
 fi
 
 cd $WORKSPACE_DIR/ark-lims
+mvn clean install
+if [ "$?" != "0" ]; then
+exit 1
+fi
+
+cd $WORKSPACE_DIR/ark-work-tracking
 mvn clean install
 if [ "$?" != "0" ]; then
 exit 1
