@@ -65,6 +65,12 @@ if [ "$?" != "0" ]; then
 exit 1
 fi
 
+cd $WORKSPACE_DIR/ark-genomics
+mvn clean install
+if [ "$?" != "0" ]; then
+exit 1
+fi
+
 cd $WORKSPACE_DIR/ark-container
 mvn clean package
 if [ "$?" != "0" ]; then
